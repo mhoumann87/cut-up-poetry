@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>Cut-Up Poetry Generator</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <!-- TODO Add real Header -->
+      <a href="index.html">michael-h.dk</a>
+      <div class="main-nav">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="javascript.html">javascript</a></li>
+          <li><a href="generative.html">generative art</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Cut-Up Poetry Generator</h1>
+    </header>
+
+    <main>
+      <form>
+        <fieldset>
+          <legend>Add your text</legend>
+          <textarea name="text-input" id="text-input" rows="10" cols="40">
+          Write text here
+          </textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>or upload a text file</legend>
+          <input type="file" name="text-upload" id="text-upload" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Add number of words in your poem</legend>
+          <input type="number" name="poem-length" id="poem-length" />
+        </fieldset>
+
+        <input
+          type="button"
+          id="submit"
+          type="submit"
+          value="Submit Selected"
+        />
+      </form>
+    </main>
+
+    <!-- TODO Add real footer  -->
+    <footer>Temp Footer</footer>
+  </body>
+</html>
