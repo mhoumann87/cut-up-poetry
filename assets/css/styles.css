@@ -73,6 +73,8 @@
 /* Setup css custom properties */
 :root {
   /* colors */
+  color-scheme: light dark;
+
   --clr-background-light: hsl(64, 41%, 79%);
   --clr-text-light: hsl(192, 25%, 21%);
   --clr-background-dark: hsl(192, 25%, 21%);
@@ -160,4 +162,52 @@ a {
 
 a:is(:hover, :focus) {
   color: var(--clr-link);
+}
+
+/* utillity classes */
+.wrapper {
+  width: 85%;
+  max-width: var(--mx-width, 1100px);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: var(--flex-dir, row);
+  gap: var(--flex-gap, 1em);
+  justify-content: var(--flex-justify, space-between);
+  align-items: var(--flex-align, center);
+}
+
+/* general header across website */
+
+.nav-wrapper {
+  background-color: var(--clr-background-dark);
+  font-size: var(--fs-headings);
+  padding: 0.5rem 3rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav .animated {
+  position: relative;
+}
+
+nav .animated::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease-in;
+}
+
+nav .animated:hover::after {
+  transform: scaleX(1);
 }
