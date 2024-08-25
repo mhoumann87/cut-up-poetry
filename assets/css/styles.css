@@ -1,18 +1,163 @@
+/* Add the fonts to the project */
+
 @font-face {
   font-family: 'Lato';
-  src: url('../fonts/Lato/Lato-Black.ttf');
-  src: url('../fonts/Lato/Lato-Bold.ttf');
-  src: url('../fonts/Lato/Lato-BoldItalic.ttf');
   src: url('../fonts/Lato/Lato-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Lato';
   src: url('../fonts/Lato/Lato-Italic.ttf');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Lato';
   src: url('../fonts/Lato/Lato-Thin.ttf');
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Lato';
   src: url('../fonts/Lato/Lato-ThinItalic.ttf');
+  font-style: italic;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato/Lato-Bold.ttf');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato/Lato-BoldItalic.ttf');
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Crimson_Text';
+  src: url('../fonts/Crimson_Text/CrimsonText-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Crimson_Text';
+  src: url('../fonts/Crimson_Text/CrimsonText-Italic.ttf');
+  font-style: italic;
+  font-weight: 400;
 }
 
 @font-face {
   font-family: 'Crimson_Text';
   src: url('../fonts/Crimson_Text/CrimsonText-Bold.ttf');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Crimson_Text';
   src: url('../fonts/Crimson_Text/CrimsonText-BoldItalic.ttf');
-  src: url('../fonts/Crimson_Text/CrimsonText-Italic.ttf');
-  src: url('../fonts/Crimson_Text/CrimsonText-Regular.ttf');
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Setup css custom properties */
+:root {
+  /* colors */
+  --clr-background-light: hsl(64, 41%, 79%);
+  --clr-text-light: hsl(192, 25%, 21%);
+  --clr-background-dark: hsl(192, 25%, 21%);
+  --clr-text-dark: hsl(64, 41%, 79%);
+
+  --clr-link: hsl(33, 76%, 59%);
+  --clr-accent: hsl(173, 62%, 71%);
+
+  /* font-family */
+  --ff-headings: 'Lato';
+  --ff-content: 'Crimson_Text';
+
+  /* font-sizes */
+  --fs-legend: 1rem;
+  --fs-text: 1.125rem;
+  --fs-headings: 2.5rem;
+  --fs-xxl: 7rem;
+
+  /* font-weights */
+  --fw-thin: 100;
+  --fw-reg: 400;
+  --fw-bold: 700;
+}
+
+/* setup color themes */
+
+body {
+  background-color: var(--clr-background-light);
+  color: var(--clr-text-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--clr-background-dark);
+    color: var(--clr-text-dark);
+  }
+}
+
+/* basic re-set */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: var(--fs-text);
+  font-family: var(--ff-content);
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-headings);
+}
+
+h1,
+h2 {
+  font-weight: var(--fw-thin);
+}
+
+h1 {
+  font-size: var(--fs-xxl);
+}
+
+h2 {
+  font-size: var(--ff-headings);
+}
+
+h3 {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-text);
+}
+
+a {
+  color: hsl(from var(--clr-link) h s l / 0.7);
+  text-decoration: none;
+  transition: all 250ms ease-in;
+}
+
+a:is(:hover, :focus) {
+  color: var(--clr-link);
 }
