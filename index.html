@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <link
       rel="shortcut icon"
       href="./assets/images/favicon.ico"
@@ -12,20 +13,43 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
-    <nav>
+    <div class="nav-wrapper">
       <!-- TODO Add real Header -->
-      <a href="index.html">michael-h.dk</a>
-      <div class="main-nav">
-        <ul>
-          <li><a href="index.html">home</a></li>
-          <li><a href="javascript.html">javascript</a></li>
-          <li><a href="generative.html">generative art</a></li>
+
+      <nav class="wrapper flex">
+        <a href="index.html">michael-h.dk</a>
+
+        <ul class="flex">
+          <li><a class="animated" href="index.html">home</a></li>
+          <li><a class="animated" href="javascript.html">javascript</a></li>
+          <li><a class="animated" href="generative.html">generative art</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     <header>
-      <h1>Cut-Up Poetry Generator</h1>
+      <div class="img-box">
+        <img
+          src="./assets/images/camille-orgel-SKcTKYNRvHY-unsplash.jpg"
+          alt="Photo of a old typewriter keyboard"
+        />
+        <p class="small">
+          Photo by
+          <a
+            href="https://unsplash.com/@cam_bam?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Camille Orgel</a
+          >
+          on
+          <a
+            href="https://unsplash.com/photos/black-and-gray-underwood-typewriter-closeup-photography-SKcTKYNRvHY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Unsplash</a
+          >
+        </p>
+      </div>
+
+      <div class="headline">
+        <h1>Cut-Up Poetry Generator</h1>
+      </div>
     </header>
 
     <main>
