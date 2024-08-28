@@ -116,18 +116,19 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--text);
-  margin: 0;
-  font-size: var(--fs-text);
-  font-family: var(--ff-content);
-  min-height: 100svh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr auto;
+/* remove all animations for people that don't want them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 img {
@@ -166,6 +167,14 @@ h3 {
 
 p {
   line-height: 1.2;
+  font-weight: var(--fw-reg);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 a {
@@ -178,11 +187,30 @@ a:is(:hover, :focus) {
   color: var(--clr-link);
 }
 
+body {
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  font-size: var(--fs-text);
+  font-family: var(--ff-content);
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+}
+
 /* utillity classes */
+
 .wrapper {
-  width: 85%;
-  max-width: var(--mx-width, 1100px);
-  margin-inline: auto;
+  margin-inline: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .wrapper {
+    width: 85%;
+    max-width: var(--mx-width, 1100px);
+    margin-inline: auto;
+  }
 }
 
 .flex {
@@ -195,6 +223,21 @@ a:is(:hover, :focus) {
 
 .grid {
   display: grid;
+}
+
+/* for assisibillity reasons - only showed when in focus */
+.skip-to-content {
+  position: absolute;
+  z-index: 99;
+  color: var(--clr-text-light);
+  background: var(--clr-background-light);
+  padding: 0.25em 0.75em;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
 }
 
 /* general header across website */
@@ -242,11 +285,6 @@ header {
   background-image: url('../images/header-img-low.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.small {
-  padding-inline-start: 1.5em;
-  font-size: 0.8125rem;
 }
 
 .filter-box {

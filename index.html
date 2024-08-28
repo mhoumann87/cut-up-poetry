@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
-    <div class="nav-wrapper">
-      <!-- TODO Add real Header -->
+    <!-- for accessibility reasons - only shows when in focus  -->
+    <a href="#form" class="skip-to-content">Skip to main content</a>
 
+    <div class="nav-wrapper" role="navigation">
+      <!-- TODO Add real Header -->
       <nav class="wrapper flex">
         <a href="index.html">michael-h.dk</a>
 
@@ -35,19 +37,6 @@
           width="2400"
           height="1600"
         />
-
-        <p class="small">
-          Photo by
-          <a
-            href="https://unsplash.com/@cam_bam?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-            >Camille Orgel</a
-          >
-          on
-          <a
-            href="https://unsplash.com/photos/black-and-gray-underwood-typewriter-closeup-photography-SKcTKYNRvHY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-            >Unsplash</a
-          >
-        </p>
       </div>
 
       <div class="filter-box"></div>
@@ -58,7 +47,7 @@
     </header>
 
     <main>
-      <form>
+      <form id="form">
         <fieldset>
           <legend>Add your text</legend>
           <textarea name="text-input" id="text-input" rows="10" cols="40">
@@ -86,6 +75,21 @@
     </main>
 
     <!-- TODO Add real footer  -->
-    <footer>Temp Footer</footer>
+    <footer>
+      <p class="small">
+        Photo by
+        <a
+          href="https://unsplash.com/@cam_bam?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          target="_blank"
+          >Camille Orgel</a
+        >
+        on
+        <a
+          href="https://unsplash.com/photos/black-and-gray-underwood-typewriter-closeup-photography-SKcTKYNRvHY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          target="_blank"
+          >Unsplash</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
