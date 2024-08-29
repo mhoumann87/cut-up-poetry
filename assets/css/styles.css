@@ -109,8 +109,6 @@
   }
 }
 
-/* setup color themes */
-
 /* basic re-set */
 *,
 *::before,
@@ -240,6 +238,8 @@ body {
   transform: translateY(0);
 }
 
+/* text only for use with screen readers */
+
 /* general header across website */
 
 .nav-wrapper {
@@ -285,6 +285,7 @@ header {
   background-image: url('../images/header-img-low.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
 }
 
 .filter-box {
@@ -302,4 +303,38 @@ header {
   grid-column: 4 / -1;
   grid-row-start: 1;
   align-self: center;
+}
+
+footer {
+  border-top: 2px solid var(--text);
+  line-height: 1.1;
+  margin: 0 0 1em 0;
+}
+
+footer ul {
+  --flex-gap: 1.5rem;
+
+  list-style: none;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* brand colors for the social icons */
+#github {
+  fill: #000000;
+}
+
+#linkedin {
+  fill: #007ab6;
+}
+
+#mastodon {
+  fill: #6364ff;
+}
+
+#bluesky {
+  fill: #295ef6;
 }
