@@ -185,6 +185,13 @@ a:is(:hover, :focus) {
   color: var(--clr-link);
 }
 
+textarea,
+input {
+  font: inherit;
+  color: var(--text);
+  background: var(--background);
+}
+
 body {
   background-color: var(--background);
   color: var(--text);
@@ -333,6 +340,21 @@ header {
     grid-column: 4 / -1;
     backdrop-filter: unset;
   }
+}
+
+form {
+  --mx-width: 800px;
+}
+
+fieldset {
+  border-radius: 10px;
+  border: 1px solid var(--text);
+  margin-block-end: 1em;
+}
+
+legend {
+  font: inherit;
+  font-size: var(--fs-legend);
 }
 
 footer {
